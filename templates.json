@@ -7,9 +7,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/registry.png",
     "image": "registry:latest",
-    "ports": [
-      "5000/tcp"
-    ],
+    "ports": ["5000/tcp"],
     "volumes": ["/var/lib/registry"]
   },
   {
@@ -20,10 +18,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/nginx.png",
     "image": "nginx:latest",
-    "ports": [
-      "80/tcp",
-      "443/tcp"
-    ],
+    "ports": ["80/tcp", "443/tcp"],
     "volumes": ["/etc/nginx", "/usr/share/nginx/html"]
   },
   {
@@ -34,9 +29,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/httpd.png",
     "image": "httpd:latest",
-    "ports": [
-      "80/tcp"
-    ],
+    "ports": ["80/tcp"],
     "volumes": ["/usr/local/apache2/htdocs/"]
   },
   {
@@ -47,9 +40,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/caddy.png",
     "image": "abiosoft/caddy:latest",
-    "ports": [
-      "80/tcp", "443/tcp", "2015/tcp"
-    ],
+    "ports": ["80/tcp", "443/tcp", "2015/tcp"],
     "volumes": ["/root/.caddy"]
   },
   {
@@ -66,9 +57,7 @@
         "label": "Root password"
       }
     ],
-    "ports": [
-      "3306/tcp"
-    ],
+    "ports": ["3306/tcp"],
     "volumes": ["/var/lib/mysql"]
   },
   {
@@ -85,9 +74,7 @@
         "label": "Root password"
       }
     ],
-    "ports": [
-      "3306/tcp"
-    ],
+    "ports": ["3306/tcp"],
     "volumes": ["/var/lib/mysql"]
   },
   {
@@ -108,9 +95,7 @@
         "label": "Superuser password"
       }
     ],
-    "ports": [
-      "5432/tcp"
-    ],
+    "ports": ["5432/tcp"],
     "volumes": ["/var/lib/postgresql/data"]
   },
   {
@@ -121,23 +106,19 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/mongo.png",
     "image": "mongo:latest",
-    "ports": [
-      "27017/tcp"
-    ],
+    "ports": ["27017/tcp"],
     "volumes": ["/data/db"]
   },
   {
     "type": "container",
     "title": "CockroachDB",
-    "description": "An open-source, survivable, strongly consistent, scale-out SQL database",
+    "description":
+      "An open-source, survivable, strongly consistent, scale-out SQL database",
     "categories": ["database"],
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/cockroachdb.png",
     "image": "cockroachdb/cockroach:latest",
-    "ports": [
-      "26257/tcp",
-      "8080/tcp"
-    ],
+    "ports": ["26257/tcp", "8080/tcp"],
     "volumes": ["/cockroach/cockroach-data"],
     "command": "start --insecure"
   },
@@ -149,10 +130,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/cratedb.png",
     "image": "crate:latest",
-    "ports": [
-      "4200/tcp",
-      "4300/tcp"
-    ],
+    "ports": ["4200/tcp", "4300/tcp"],
     "volumes": ["/data"]
   },
   {
@@ -163,26 +141,20 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/elasticsearch.png",
     "image": "elasticsearch:latest",
-    "ports": [
-      "9200/tcp",
-      "9300/tcp"
-    ],
+    "ports": ["9200/tcp", "9300/tcp"],
     "volumes": ["/usr/share/elasticsearch/data"]
   },
   {
     "type": "container",
     "title": "Gitlab CE",
     "description": "Open-source end-to-end software development platform",
-    "note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
+    "note":
+      "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
     "categories": ["development", "project-management"],
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/gitlab_ce.png",
     "image": "gitlab/gitlab-ce:latest",
-    "ports": [
-      "80/tcp",
-      "443/tcp",
-      "22/tcp"
-    ],
+    "ports": ["80/tcp", "443/tcp", "22/tcp"],
     "volumes": [
       { "container": "/etc/gitlab" },
       { "container": "/var/log/gitlab" },
@@ -192,14 +164,13 @@
   {
     "type": "container",
     "title": "Minio",
-    "description": "A distributed object storage server built for cloud applications and devops",
+    "description":
+      "A distributed object storage server built for cloud applications and devops",
     "categories": ["storage"],
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/minio.png",
     "image": "minio/minio:latest",
-    "ports": [
-      "9000/tcp"
-    ],
+    "ports": ["9000/tcp"],
     "env": [
       {
         "name": "MINIO_ACCESS_KEY",
@@ -221,9 +192,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/scality-s3.png",
     "image": "scality/s3server",
-    "ports": [
-      "8000/tcp"
-    ],
+    "ports": ["8000/tcp"],
     "env": [
       {
         "name": "SCALITY_ACCESS_KEY",
@@ -242,12 +211,11 @@
     "description": "Microsoft SQL Server on Linux",
     "categories": ["database"],
     "platform": "linux",
-    "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
+    "note":
+      "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
     "logo": "https://portainer.io/images/logos/microsoft.png",
     "image": "microsoft/mssql-server-linux:2017-GA",
-    "ports": [
-      "1433/tcp"
-    ],
+    "ports": ["1433/tcp"],
     "env": [
       {
         "name": "ACCEPT_EULA",
@@ -265,12 +233,11 @@
     "description": "Microsoft SQL Server Developer for Windows containers",
     "categories": ["database"],
     "platform": "windows",
-    "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
+    "note":
+      "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
     "logo": "https://portainer.io/images/logos/microsoft.png",
     "image": "microsoft/mssql-server-windows-developer:latest",
-    "ports": [
-      "1433/tcp"
-    ],
+    "ports": ["1433/tcp"],
     "env": [
       {
         "name": "ACCEPT_EULA",
@@ -289,12 +256,11 @@
     "description": "Microsoft SQL Server Express for Windows containers",
     "categories": ["database"],
     "platform": "windows",
-    "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
+    "note":
+      "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
     "logo": "https://portainer.io/images/logos/microsoft.png",
     "image": "microsoft/mssql-server-windows-express:latest",
-    "ports": [
-      "1433/tcp"
-    ],
+    "ports": ["1433/tcp"],
     "env": [
       {
         "name": "ACCEPT_EULA",
@@ -315,9 +281,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/ironfunctions.png",
     "image": "iron/functions:latest",
-    "ports": [
-      "8080/tcp"
-    ],
+    "ports": ["8080/tcp"],
     "volumes": ["/app/data"],
     "privileged": true
   },
@@ -329,9 +293,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/ironfunctions.png",
     "image": "iron/functions-ui:latest",
-    "ports": [
-      "4000/tcp"
-    ],
+    "ports": ["4000/tcp"],
     "volumes": ["/app/data"],
     "env": [
       {
@@ -349,9 +311,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/solr.png",
     "image": "solr:latest",
-    "ports": [
-      "8983/tcp"
-    ],
+    "ports": ["8983/tcp"],
     "volumes": ["/opt/solr/mydata"]
   },
   {
@@ -362,9 +322,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/redis.png",
     "image": "redis:latest",
-    "ports": [
-      "6379/tcp"
-    ],
+    "ports": ["6379/tcp"],
     "volumes": ["/data"]
   },
   {
@@ -375,10 +333,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/rabbitmq.png",
     "image": "rabbitmq:latest",
-    "ports": [
-      "5671/tcp",
-      "5672/tcp"
-    ],
+    "ports": ["5671/tcp", "5672/tcp"],
     "volumes": ["/var/lib/rabbitmq"]
   },
   {
@@ -390,9 +345,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/ghost.png",
     "image": "ghost:latest",
-    "ports": [
-      "2368/tcp"
-    ],
+    "ports": ["2368/tcp"],
     "volumes": ["/var/lib/ghost/content"]
   },
   {
@@ -404,9 +357,7 @@
     "note": "Default credentials: admin / changeme",
     "logo": "https://portainer.io/images/logos/plesk.png",
     "image": "plesk/plesk:preview",
-    "ports": [
-      "21/tcp", "80/tcp", "443/tcp", "8880/tcp", "8443/tcp", "8447/tcp"
-    ]
+    "ports": ["21/tcp", "80/tcp", "443/tcp", "8880/tcp", "8443/tcp", "8447/tcp"]
   },
   {
     "type": "container",
@@ -427,9 +378,7 @@
         "label": "Database password"
       }
     ],
-    "ports": [
-      "80/tcp"
-    ],
+    "ports": ["80/tcp"],
     "volumes": ["/var/www/html"]
   },
   {
@@ -451,9 +400,7 @@
         "label": "Database password"
       }
     ],
-    "ports": [
-      "80/tcp"
-    ],
+    "ports": ["80/tcp"],
     "volumes": ["/var/www/html"]
   },
   {
@@ -464,9 +411,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/drupal.png",
     "image": "drupal:latest",
-    "ports": [
-      "80/tcp"
-    ],
+    "ports": ["80/tcp"],
     "volumes": ["/var/www/html"]
   },
   {
@@ -477,9 +422,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/plone.png",
     "image": "plone:latest",
-    "ports": [
-      "8080/tcp"
-    ],
+    "ports": ["8080/tcp"],
     "volumes": ["/data"]
   },
   {
@@ -490,11 +433,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/magento.png",
     "image": "alankent/gsd:latest",
-    "ports": [
-      "80/tcp",
-      "3000/tcp",
-      "3001/tcp"
-    ],
+    "ports": ["80/tcp", "3000/tcp", "3001/tcp"],
     "volumes": ["/var/www/html/"]
   },
   {
@@ -543,9 +482,7 @@
         "label": "Database password"
       }
     ],
-    "ports": [
-      "80/tcp"
-    ],
+    "ports": ["80/tcp"],
     "volumes": ["/var/www/html"]
   },
   {
@@ -567,12 +504,7 @@
         "label": "License key"
       }
     ],
-    "ports": [
-      "1935/tcp",
-      "8086/tcp",
-      "8087/tcp",
-      "8088/tcp"
-    ],
+    "ports": ["1935/tcp", "8086/tcp", "8087/tcp", "8088/tcp"],
     "volumes": ["/var/lib/wowza"]
   },
   {
@@ -583,10 +515,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/jenkins.png",
     "image": "jenkins/jenkins:lts",
-    "ports": [
-      "8080/tcp",
-      "50000/tcp"
-    ],
+    "ports": ["8080/tcp", "50000/tcp"],
     "env": [
       {
         "name": "JENKINS_OPTS",
@@ -603,9 +532,7 @@
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/redmine.png",
     "image": "redmine:latest",
-    "ports": [
-      "3000/tcp"
-    ],
+    "ports": ["3000/tcp"],
     "volumes": ["/usr/src/redmine/files"]
   },
   {
@@ -631,9 +558,7 @@
         "label": "Database password"
       }
     ],
-    "ports": [
-      "8069/tcp"
-    ],
+    "ports": ["8069/tcp"],
     "volumes": ["/var/lib/odoo", "/mnt/extra-addons"]
   },
   {
@@ -642,12 +567,11 @@
     "description": "Open-source network backup",
     "categories": ["backup"],
     "platform": "linux",
-    "note": "This application web interface is exposed on the port 55414 inside the container.",
+    "note":
+      "This application web interface is exposed on the port 55414 inside the container.",
     "logo": "https://portainer.io/images/logos/urbackup.png",
     "image": "cfstras/urbackup",
-    "ports": [
-      "55413/tcp", "55414/tcp", "55415/tcp", "35622/tcp"
-    ],
+    "ports": ["55413/tcp", "55414/tcp", "55415/tcp", "35622/tcp"],
     "volumes": ["/var/urbackup"]
   },
   {
@@ -664,9 +588,7 @@
         "set": "lucee@4.5"
       }
     ],
-    "ports": [
-      "8080/tcp", "8443/tcp"
-    ]
+    "ports": ["8080/tcp", "8443/tcp"]
   },
   {
     "type": "container",
@@ -690,9 +612,7 @@
         "set": "lucee@4.5"
       }
     ],
-    "ports": [
-      "8080/tcp", "8443/tcp"
-    ],
+    "ports": ["8080/tcp", "8443/tcp"],
     "volumes": ["/data/contentbox/db", "/app/includes/shared/media"]
   },
   {
@@ -700,7 +620,8 @@
     "title": "OpenFaaS",
     "name": "func",
     "description": "Serverless functions made simple",
-    "note": "Deploys the API gateway and sample functions. You can access the UI on port 8080. <b>Warning</b>: the name of the stack must be 'func'.",
+    "note":
+      "Deploys the API gateway and sample functions. You can access the UI on port 8080. <b>Warning</b>: the name of the stack must be 'func'.",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/openfaas.png",
@@ -726,7 +647,8 @@
     "type": "stack",
     "title": "CockroachDB",
     "description": "CockroachDB cluster",
-    "note": "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
+    "note":
+      "Deploys an insecure CockroachDB cluster, please refer to <a href=\"https://www.cockroachlabs.com/docs/stable/orchestrate-cockroachdb-with-docker-swarm.html\" target=\"_blank\">CockroachDB documentation</a> for production deployments.",
     "categories": ["database"],
     "platform": "linux",
     "logo": "https://portainer.io/images/logos/cockroachdb.png",
@@ -780,6 +702,31 @@
       {
         "container": "/var/run/docker.sock",
         "bind": "/var/run/docker.sock"
+      }
+    ]
+  },
+  {
+    "type": "container",
+    "title": "Træfik",
+    "description":
+      "Træfik (pronounced like traffic) is a modern HTTP reverse proxy and load balancer made to deploy microservices with ease. It supports several backends (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, and a lot more) to manage its configuration automatically and dynamically.",
+    "note": "<a href=\"http://docs.traefik.io/\">Træfik documentation</a>",
+    "platform": "linux",
+    "categories": ["webserver", "reverse proxy"],
+    "logo":
+      "https://d33wubrfki0l68.cloudfront.net/e29410f43273a18d40e1bd6e41641f5afdfc8057/eb7ca/traefik.logo.png",
+    "image": "traefik:latest",
+    "command":
+      "--web --docker --docker.domain=docker.localhost --logLevel=DEBUG  --docker.exposedByDefault=true",
+    "ports": ["80/tcp", "443/tcp", "8080/tcp"],
+    "volumes": [
+      {
+        "container": "/var/run/docker.sock",
+        "bind": "/var/run/docker.sock"
+      },
+      {
+        "container": "/traefik.toml",
+        "bind": "/dev/null"
       }
     ]
   }
