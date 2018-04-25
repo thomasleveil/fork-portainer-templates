@@ -712,7 +712,7 @@
       "Træfik (pronounced like traffic) is a modern HTTP reverse proxy and load balancer made to deploy microservices with ease. It supports several backends (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, and a lot more) to manage its configuration automatically and dynamically.",
     "note": "<a href=\"http://docs.traefik.io/\">Træfik documentation</a>",
     "platform": "linux",
-    "categories": ["webserver", "reverse proxy"],
+    "categories": ["reverse proxy"],
     "logo":
       "https://d33wubrfki0l68.cloudfront.net/e29410f43273a18d40e1bd6e41641f5afdfc8057/eb7ca/traefik.logo.png",
     "image": "traefik:latest",
