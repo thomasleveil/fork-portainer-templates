@@ -717,8 +717,15 @@
       "https://d33wubrfki0l68.cloudfront.net/e29410f43273a18d40e1bd6e41641f5afdfc8057/eb7ca/traefik.logo.png",
     "image": "traefik:latest",
     "command":
-      "--docker --docker.domain=docker.localhost --docker.exposedByDefault=true --logLevel=WARN --ping --api --api.statistics.recenterrors=20 ",
+      "--docker --docker.domain=${TRAEFIK_BASE_DOMAIN} --docker.exposedByDefault=true --logLevel=WARN --ping --api --api.statistics.recenterrors=20 ",
     "ports": ["80/tcp", "443/tcp", "8080/tcp"],
+    "env": [
+      {
+        "name": "TRAEFIK_BASE_DOMAIN",
+        "label": "Default domain for Traefik",
+        "set": "docker.localhost"
+      }
+    ],
     "volumes": [
       {
         "container": "/var/run/docker.sock",
